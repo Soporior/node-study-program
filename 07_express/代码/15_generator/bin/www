@@ -1,0 +1,17 @@
+/*
+ * @Author: lxf
+ * @Date: 2023-04-11 17:06:57
+ * @LastEditors: lxf
+ * @LastEditTime: 2023-04-11 17:15:54
+ * @FilePath: \node-study-program\07_express\代码\15_generator\bin\www
+ */
+/*$$
+ $ @Author: lxf
+ $ @Date: 2023-04-11 17:06:57
+ $ @LastEditors: lxf
+ $ @LastEditTime: 2023-04-11 17:14:08
+ $ @FilePath: \node-study-program\07_express\代码\15_generator\bin\www.js
+ $*/
+// import app from "../app.js"
+const app = require("../app")
+app.listen(3000)

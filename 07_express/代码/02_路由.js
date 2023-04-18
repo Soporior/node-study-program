@@ -1,33 +1,36 @@
-/*$$
- $ @Author: lxf
- $ @Date: 2023-04-17 14:59:30
- $ @LastEditors: lxf
- $ @LastEditTime: 2023-04-17 14:59:31
- $ @FilePath: \node-study-program\07_express\代码\index copy.js
- $*/
-/*$$
- $ @Author: lxf
- $ @Date: 2023-04-17 14:53:18
- $ @LastEditors: lxf
- $ @LastEditTime: 2023-04-17 14:58:26
- $ @FilePath: \node-study-program\07_express\代码\index.js
- $*/
+//导入 express
+const express = require('express');
 
-const express = require("express")
-const app = express()
+//创建应用对象
+const app = express();
 
+//创建路由
+app.get('/home', (req, res) => {
+    res.end('hello express');
+});
 
+//首页路由
+app.get('/', (req, res) => {
+    console.log(req.ip);
+    res.end('home');
+});
 
+//post
+app.post('/login', (req, res) => {
+    res.end('login login')
+});
 
-app.get("/home",(req,res)=>{
-    res.end("hello express")
+//匹配所有的方法
+app.all('/test', (req, res) => {
+    res.end('test test');
 })
 
+//404 响应
+app.all('*', (req, res) => {
+    res.end('404 not Found')
+});
 
-
-
-
-
-app.listen(3000,()=>{
-    console.log("启动3000 端口");
+//监听端口, 启动服务
+app.listen(3000, () => {
+    console.log('服务已经启动, 端口 3000 正在监听中....')
 })

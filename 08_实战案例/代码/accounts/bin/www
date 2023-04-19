@@ -3,7 +3,6 @@
 /**
  * Module dependencies.
  */
-
 var app = require('../app');
 var debug = require('debug')('accounts:server');
 var http = require('http');
@@ -34,8 +33,9 @@ server.on('listening', onListening);
  */
 
 function normalizePort(val) {
+  //parseInt(stirng,radix)  转置 把string当成radix进制数 返回十进制的数字  
+  //比如parseInt(10101,2)  10101是二进制数 转换成十进制返回 21
   var port = parseInt(val, 10);
-
   if (isNaN(port)) {
     // named pipe
     return val;
@@ -54,6 +54,7 @@ function normalizePort(val) {
  */
 
 function onError(error) {
+
   if (error.syscall !== 'listen') {
     throw error;
   }
